@@ -69,7 +69,24 @@ public final class Selector {
     * @throws        NoSuchElementException as per above
     */
    public static <T> T max(Collection<T> coll, Comparator<T> comp) {
-      return null;
+   
+      if (coll == null || comp == null) {
+         throw new IllegalArgumentException();
+      }
+      
+      if (coll.isEmpty()) {
+         throw new NoSuchElementException();
+      }
+      
+      T max = coll.iterator().next();
+      
+      for (T val : coll) {
+         if (comp.compare(val, max) > 0) {
+            max = val;
+         }
+      }
+      return max;
+   
    }
 
 
@@ -88,6 +105,21 @@ public final class Selector {
     * @throws        NoSuchElementException as per above
     */
    public static <T> T kmin(Collection<T> coll, int k, Comparator<T> comp) {
+   
+      if (coll == null || comp == null) {
+         throw new IllegalArgumentException();
+      }
+      
+      if (coll.isEmpty()) {
+         throw new NoSuchElementException();
+      }
+      
+      ArrayList<T> list = new ArrayList<T>(coll);
+      Collection.sort(list);
+      
+      
+   
+     
       return null;
    }
 
@@ -107,6 +139,15 @@ public final class Selector {
     * @throws        NoSuchElementException as per above
     */
    public static <T> T kmax(Collection<T> coll, int k, Comparator<T> comp) {
+   
+    if (coll == null || comp == null) {
+         throw new IllegalArgumentException();
+      }
+      
+      if (coll.isEmpty()) {
+         throw new NoSuchElementException();
+      }
+
       return null;
    }
 
@@ -132,6 +173,16 @@ public final class Selector {
     */
    public static <T> Collection<T> range(Collection<T> coll, T low, T high,
                                          Comparator<T> comp) {
+                                         
+     
+     if (coll == null || comp == null) {
+         throw new IllegalArgumentException();
+      }
+      
+      if (coll.isEmpty()) {
+         throw new NoSuchElementException();
+      }
+
       return null;
    }
 
@@ -152,6 +203,15 @@ public final class Selector {
     * @throws        NoSuchElementException as per above
     */
    public static <T> T ceiling(Collection<T> coll, T key, Comparator<T> comp) {
+   
+    if (coll == null || comp == null) {
+         throw new IllegalArgumentException();
+      }
+      
+      if (coll.isEmpty()) {
+         throw new NoSuchElementException();
+      }
+
       return null;
    }
 
@@ -172,6 +232,15 @@ public final class Selector {
     * @throws        NoSuchElementException as per above
     */
    public static <T> T floor(Collection<T> coll, T key, Comparator<T> comp) {
+   
+    if (coll == null || comp == null) {
+         throw new IllegalArgumentException();
+      }
+      
+      if (coll.isEmpty()) {
+         throw new NoSuchElementException();
+      }
+
       return null;
    }
 
